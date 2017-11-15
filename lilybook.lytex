@@ -1,0 +1,307 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+%\usepackage[T2A]{fontenc}            % [T2A,T1]
+\usepackage[russian]{babel}
+
+\graphicspath{ {images/} }
+
+\usepackage{geometry}
+\geometry{left=3cm}
+\geometry{right=2cm}
+\geometry{top=2cm}
+\geometry{bottom=2cm}
+
+\begin{document}
+
+%
+% http://lilypond.org/website/development.html
+%
+%
+
+%-------------------------------------------------------------------------------
+\section{Упражнения}
+
+\subsection*{Гамма C мажор}
+	\begin{lilypond}
+		gamma = \relative c { c d e f | g a b  }
+	
+	\score {	
+	    \relative 
+		{
+			\key c \major \time 4/4 
+			\transpose c c {\gamma}
+			\transpose c c' {\gamma}
+			\transpose c c'' {\gamma}
+			\transpose c c''' {\gamma}
+			\bar  "."
+	    } 
+    }
+  
+  \end{lilypond}
+
+
+\subsection*{Ломаная гамма}
+\begin{lilypond}
+	\score 
+	{
+	    \relative c'
+		{
+			\key c \major \time 4/4 
+			c4 e g c | e, g c d | g, c d  e | c e g c | c g e c | g' e c g |% \break
+			 e' c g e | c' g e  c 
+			\bar  "."
+	    } 
+	}
+\end{lilypond}
+
+
+\newpage
+
+%-------------------------------------------------------------------------------
+\section{Джазовые темы}
+
+\subsection*{C-Jam Blues}
+	\em{Twist}
+	\medskip
+
+	\begin{lilypond}
+		%\header {
+		%  title = "C-Jam Blues"
+		%  composer = "Duke Ellington"
+		%}
+		theme = \relative c'' { g8 g4 r8 r2 | g8 g4 r8 g8 g4 r8 | g4. c8 r2 | r1 }
+		<<
+		\chords { c1 c1 c1 c1 f1 f1 c1 c1 g1 g1 c1 c1 }
+		\relative 
+		{
+			\key c \major \time 4/4 
+			\theme \break
+			\theme \break
+			\theme \bar  "."
+		} 
+		>>
+  \end{lilypond}
+
+
+
+%-------------------------------------------------------------------------------
+\subsection*{Twist}
+  \em{Twist}
+  \medskip
+
+	\begin{lilypond}
+		<<
+		\chords { r1 c1 c1  a1:m a1:m  f1 f1  g1 g1  }
+		\relative 
+		{
+			\key c \major \time 4/4 
+			r8 g'8  g[g]  g[g]  g[g] |
+			\bar "[|:"
+			g4 e8 e8~ e2 | r8 g8  g[g] g[g] g[g] | \break
+			a4 e8 e8~ e2 | r8 a8  a[a] a[a] a[a] | 
+			a4 f8 f8~ f2 | r8 a8  a[a] a[a] a[a] |
+			b1           | r8 g8  g[g] g[g] g[g] |
+			\bar ":|]"
+			c1 
+			\bar  "."
+		} 
+		>>
+  \end{lilypond}
+
+
+%-------------------------------------------------------------------------------
+\subsection*{Чёрный демон}
+	\em{Bossa nova}
+	\medskip
+
+	\begin{lilypond}
+	<<
+		\chords {
+			s1  | a:m | s   | e   | s   |
+			g:m | s   | a:m | s   | d:m | s
+			a:m | s   | e   | s   |	a:m | s
+			e   | s   | a:m | s   | s
+		}
+		\relative c''
+		{
+			\key c \major \time 4/4 
+
+			r4 r4 r4 e,4 \bar "[|:" c'2. b8[a] | a2. gis8[b] | e,1~ | e2. e4 | \break 
+			bes'2. a8[g] | g2. f8[e] | a1~ | a2. d,4 | d2. e8[f] |
+			b2. e,4 | \break
+			c2. d8[e] | a1 | gis4 e4 e2~ | e2 e8[gis] b4 | a1~a2. e4 \break
+			\bar ":|]" a1 | gis4 e4 e2~ | e2 e8[gis8] b4 | a1~a1
+
+			\bar  "."
+		} 
+	>>
+  \end{lilypond}
+
+
+%-------------------------------------------------------------------------------
+\newpage
+%\subsection*{Rock-n-Roll}
+%  \em{Swing}
+%  \medskip
+%
+%	\begin{lilypond}
+%
+%		ch     = \chords      { c1 s c s | f   s c s  | g s c s }
+%		cega   = \relative c' { c4 e g a | bes a g e }
+%		facd   = \relative c' { f4 a c d | ees d c a }
+%		gbde   = \relative c' { g4 b d e | f   e d b }
+%		melody = \relative c'
+%		{
+%			\cega \cega \break
+%			\facd \cega \break
+%			\gbde \cega \bar  ":|." c2 \bar "."
+%		} 
+%		\score {
+%			\header {
+%				title       = \markup \center-column { "Rock-n-roll" }
+%				subsubtitle = "Ver.1"
+%				piece       = "Swing"
+%				opus        = "Вариант 2/4" 
+%			}
+%			\new Voice {
+%				\time 2/4 
+%				\shiftDurations #1 #0 { << \melody \ch >> }
+%			}
+%		}
+%
+%		%\em{Swing}
+%  		%\medskip
+%
+%		\score {
+%			\header {
+%				subsubtitle = "Ver.2"
+%				piece       = "Swing"
+%				opus        = "Вариант 4/4" 
+%			}
+%			\new Voice {
+%				\time 4/4
+%				\shiftDurations #0 #0 { << \ch \melody>> }
+%			}
+%		}
+%     
+%  \end{lilypond}
+
+\subsection*{Rock-n-Roll две четверти}
+  \em{Swing}
+  \medskip
+
+	\begin{lilypond}
+		cega   = \relative c' { c8 e g a | bes a g e }
+		facd   = \relative c' { f8 a c d | ees d c a }
+		gbde   = \relative c' { g8 b d e | f   e d b }
+	
+	<<
+		\chords { c1 s c s | f   s c s  | g s c s }
+
+		\relative c''
+		{
+			\key c \major \time 2/4 
+
+			\cega \cega \break
+			\facd \cega \break
+			\gbde \cega \bar  ":|." c2 \bar "."
+		} 
+	>>
+     
+  \end{lilypond}
+
+\subsection*{Rock-n-Roll четветными}
+  \em{Swing}
+  \medskip
+
+	\begin{lilypond}
+		cega   = \relative c' { c4 e g a | bes a g e }
+		facd   = \relative c' { f4 a c d | ees d c a }
+		gbde   = \relative c' { g4 b d e | f   e d b }
+	
+	<<
+		\chords { c1 s c s | f   s c s  | g s c s }
+
+		\relative c''
+		{
+			\key c \major \time 4/4 
+
+			\cega \cega \break
+			\facd \cega \break
+			\gbde \cega \bar  ":|." c2 \bar "."
+		} 
+	>>
+     
+  \end{lilypond}
+
+
+\subsection*{Rock-n-Roll восьмыми}
+  \em{Swing}
+  \medskip
+
+	\begin{lilypond}
+		cega   = \relative c' { c8[c] e[e] g[g] a[a] | bes[bes] a[a] g[g] e[e] }
+		facd   = \relative c' { f8[f] a[a] c[c] d[d] | ees[ees] d[d] c[c] a[a] }
+		gbde   = \relative c' { g8[g] b[b] d[d] e[e] | f[f]     e[e] d[d] b[b] }
+	
+	<<
+		\chords { c1 s c s | f   s c s  | g s c s }
+
+		\relative c''
+		{
+			\key c \major \time 4/4 
+
+			\cega \cega \break
+			\facd \cega \break
+			\gbde \cega \bar  ":|." c2 \bar "."
+		} 
+	>>
+     
+  \end{lilypond}
+
+
+%-------------------------------------------------------------------------------
+
+
+\newpage
+\section{Джазовые темы}
+
+%
+% http://medvedya.net.ru/notes/
+% http://gitarre.ru/akkord-a7
+% 
+\subsection*{Калинка}
+  \em{Бодро, легко}
+  \medskip
+
+	\begin{lilypond}
+		melody = \relative c'' 
+		{
+			\key f \major 
+			\time 2/4
+			%\clef treble
+
+			a2 \bar ".|:"  g4 e8[ f8] | g4 e8[ f8] | g4 f8[ e8] | d4 a'8[ a8 ] | \break
+			g8.[ f16 ] e8[ f8 ] | g4 e8[ f8] | g4 f8[ e8] | d4 a'8[ a8 ] |
+			\bar  ":|."
+		}
+		harmonies = \chords {
+			s2  | a   | s   | s   | d:m  | a   | s   | s   | d:m
+		}
+		text = \lyricmode 
+		{
+			Ка -- лин -- ка, ка -- лин -- ка, ка -- лин -- ка  мо -- я!
+			В саду я -- го -- да ма -- лин -- ка, ма -- лин -- ка мо -- я!
+			Ах, ка-
+		}
+		\score{
+			<<
+			\harmonies
+			\melody
+			%\new Lyrics \lyricsto "one" \text
+			>>
+		}
+
+  \end{lilypond}
+
+\end{document}
