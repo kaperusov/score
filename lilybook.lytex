@@ -3,7 +3,11 @@
 %\usepackage[T2A]{fontenc}            % [T2A,T1]
 \usepackage[russian]{babel}
 
-\graphicspath{ {images/} }
+%\graphicspath{images/}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{graphicx}%
+
 
 \usepackage{geometry}
 \geometry{left=3cm}
@@ -16,12 +20,11 @@
 %
 % http://lilypond.org/website/development.html
 %
-%
 
 %-------------------------------------------------------------------------------
-\section{Упражнения}
+\section*{Гаммы}
 
-\subsection*{Гамма C мажор}
+\subsection*{Полная гамма До мажор}
 	\begin{lilypond}
 		gamma = \relative c { c d e f | g a b  }
 	
@@ -40,20 +43,52 @@
   \end{lilypond}
 
 
-\subsection*{Ломаная гамма}
+
+\subsection*{Ломаная гамма До мажор}
 \begin{lilypond}
 	\score 
 	{
 	    \relative c'
 		{
-			\key c \major \time 4/4 
-			c4 e g c | e, g c d | g, c d  e | c e g c | c g e c | g' e c g |% \break
-			 e' c g e | c' g e  c 
+			\key c \major \time 2/4 
+			c8 e g c | e, g c d | g, c d  e | c e g c | \break
+			c g e c | g' e c g | e' c g e | c' g e  c \fermata
 			\bar  "."
 	    } 
 	}
 \end{lilypond}
 
+
+\subsection*{Гамма Си-бемоль мажор}
+\begin{lilypond}
+	up   = \relative bes, { bes8 c d ees f g a  }
+	down = \relative bes, { bes8 a g f ees d c  }
+
+\score {	
+	\relative bes
+	{
+		\key bes \major \time 2/4
+		\transpose bes bes' {\up}
+		\transpose bes bes'' {\up}
+		\transpose bes bes''' {\down}
+		\transpose bes bes'' {\down}
+		\bar  "."
+	} 
+}
+\end{lilypond}
+
+\subsection*{Арпеджио в Си-бемоль мажор}
+\begin{lilypond}
+\score {
+	\relative bes {
+		\key bes \major \time 2/4
+		
+		bes8 d f bes | d, f bes d | f, bes d ees | bes d f bes | \break
+		bes f d bes | f' d bes f | d' bes f d | bes' f d bes \fermata |
+		\bar "."
+	}
+}
+\end{lilypond}
 
 \newpage
 
@@ -264,7 +299,7 @@
 
 
 \newpage
-\section{Джазовые темы}
+\section*{Прочее}
 
 %
 % http://medvedya.net.ru/notes/

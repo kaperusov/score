@@ -1,0 +1,19 @@
+#!/bin/sh
+
+file=${1}
+name=${file%.lytex}
+#lilybook.lytex
+dir=build-${name}
+echo ${name}
+echo ${dir}
+#exit
+
+lilypond-book --output=${dir} --pdf ${name}.lytex
+cd ${dir}
+#pdflatex lilybook
+latex ${name}.tex
+dvipdf -dNOSAFER ${name}.dvi
+#mv ${name}.pdf ../${name}.pdf
+exec `evince ${name}.pdf >/dev/null 2>&1 &`
+cd ..
+#rm -rf ${dir}/*
