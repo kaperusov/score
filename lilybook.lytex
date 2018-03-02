@@ -95,6 +95,37 @@
 %-------------------------------------------------------------------------------
 \section{Джазовые темы}
 
+%-------------------------------------------------------------------------------
+\subsection*{Чёрный демон}
+	\em{Bossa nova}
+	\medskip
+
+	\begin{lilypond}
+	<<
+		\chords {
+			s1  | a:m | s   | e   | s   |
+			g:m | s   | a:m | s   | d:m | s
+			a:m | s   | e   | s   |	a:m | s
+			e   | s   | a:m | s   | s
+		}
+		\relative c''
+		{
+			\key c \major \time 4/4 
+
+			r4 r4 r4 e,4 \bar "[|:" c'2. b8[a] | a2. gis8[b] | e,1~ | e2. e4 | \break 
+			bes'2. a8[g] | g2. f8[e] | a1~ | a2. d,4 | d2. e8[f] |
+			b2. e,4 | \break
+			c2. d8[e] | a1 | gis4 e4 e2~ | e2 e8[gis] b4 | a1~a2. e4 \break
+			\bar ":|]" a1 | gis4 e4 e2~ | e2 e8[gis8] b4 | a1~a1
+
+			\bar  "."
+		} 
+	>>
+  \end{lilypond}
+
+%-------------------------------------------------------------------------------
+\newpage
+
 \subsection*{C-Jam Blues}
 	\em{Twist}
 	\medskip
@@ -144,37 +175,9 @@
   \end{lilypond}
 
 
-%-------------------------------------------------------------------------------
-\subsection*{Чёрный демон}
-	\em{Bossa nova}
-	\medskip
-
-	\begin{lilypond}
-	<<
-		\chords {
-			s1  | a:m | s   | e   | s   |
-			g:m | s   | a:m | s   | d:m | s
-			a:m | s   | e   | s   |	a:m | s
-			e   | s   | a:m | s   | s
-		}
-		\relative c''
-		{
-			\key c \major \time 4/4 
-
-			r4 r4 r4 e,4 \bar "[|:" c'2. b8[a] | a2. gis8[b] | e,1~ | e2. e4 | \break 
-			bes'2. a8[g] | g2. f8[e] | a1~ | a2. d,4 | d2. e8[f] |
-			b2. e,4 | \break
-			c2. d8[e] | a1 | gis4 e4 e2~ | e2 e8[gis] b4 | a1~a2. e4 \break
-			\bar ":|]" a1 | gis4 e4 e2~ | e2 e8[gis8] b4 | a1~a1
-
-			\bar  "."
-		} 
-	>>
-  \end{lilypond}
 
 
 %-------------------------------------------------------------------------------
-\newpage
 %\subsection*{Rock-n-Roll}
 %  \em{Swing}
 %  \medskip
@@ -221,41 +224,41 @@
 %     
 %  \end{lilypond}
 
-\subsection*{Rock-n-Roll две четверти}
-  \em{Swing}
-  \medskip
-
-	\begin{lilypond}
-		cega   = \relative c' { c8 e g a | bes a g e }
-		facd   = \relative c' { f8 a c d | ees d c a }
-		gbde   = \relative c' { g8 b d e | f   e d b }
-	
-	<<
-		\chords { c1 s c s | f   s c s  | g s c s }
-
-		\relative c''
-		{
-			\key c \major \time 2/4 
-
-			\cega \cega \break
-			\facd \cega \break
-			\gbde \cega \bar  ":|." c2 \bar "."
-		} 
-	>>
-     
-  \end{lilypond}
+%\subsection*{Rock-n-Roll две четверти}
+%  \em{Swing}
+%  \medskip
+%
+%	\begin{lilypond}
+%		cega   = \relative c' { c8 e g a | bes a g e }
+%		facd   = \relative c' { f8 a c d | ees d c a }
+%		gbde   = \relative c' { g8 b d e | f   e d b }
+%	
+%	<<
+%		\chords { c1 s c s | f   s c s  | g s c s }
+%
+%		\relative c''
+%		{
+%			\key c \major \time 2/4 
+%
+%			\cega \cega \break
+%			\facd \cega \break
+%			\gbde \cega \bar  ":|." c2 \bar "."
+%		} 
+%	>>
+%     
+%  \end{lilypond}
 
 \subsection*{Rock-n-Roll четветными}
   \em{Swing}
   \medskip
 
 	\begin{lilypond}
-		cega   = \relative c' { c4 e g a | bes a g e }
-		facd   = \relative c' { f4 a c d | ees d c a }
-		gbde   = \relative c' { g4 b d e | f   e d b }
+		cega   = \relative c'  { c4 e g a | bes a g e }
+		facd   = \relative c'  { f4 a c d | ees d c a }
+		gbde   = \relative c'' { g4 b d e | f   e d b }
 	
 	<<
-		\chords { c1 s c s | f   s c s  | g s c s }
+		\chords { c1 s c s | f   s c s  | g s c s | c }
 
 		\relative c''
 		{
@@ -275,9 +278,9 @@
   \medskip
 
 	\begin{lilypond}
-		cega   = \relative c' { c8[c] e[e] g[g] a[a] | bes[bes] a[a] g[g] e[e] }
-		facd   = \relative c' { f8[f] a[a] c[c] d[d] | ees[ees] d[d] c[c] a[a] }
-		gbde   = \relative c' { g8[g] b[b] d[d] e[e] | f[f]     e[e] d[d] b[b] }
+		cega   = \relative c'  { c8[c] e[e] g[g] a[a] | bes[bes] a[a] g[g] e[e] }
+		facd   = \relative c'  { f8[f] a[a] c[c] d[d] | ees[ees] d[d] c[c] a[a] }
+		gbde   = \relative c'' { g8[g] b[b] d[d] e[e] | f[f]     e[e] d[d] b[b] }
 	
 	<<
 		\chords { c1 s c s | f   s c s  | g s c s }
@@ -292,6 +295,51 @@
 		} 
 	>>
      
+  \end{lilypond}
+
+
+
+
+
+%-------------------------------------------------------------------------------
+\subsection*{Hit the road, Jack}
+  \medskip
+
+	\begin{lilypond}
+		
+		melody = \relative c'
+		{
+			\key c \major \time 4/4 
+			
+			r1 r1 r1 r2 | r4 e8.[c16] | \break 
+			\bar ".|:" 
+			d8.[c16 a8. a16] r4 r8. a16 | c8.[c16~ d8. c16] d4 c |
+			e e | a a | c c a e8.[c16] 
+			d8.[c16 a8. a16] r4 r8. a16 | c8.[c16 d8.~c16] d4 a |
+			a1~ a
+			\bar ":|."
+		}
+		harmonies = \chords
+		{
+			a2:min g | f | e
+			a2:min g | f | e
+			a2:min g | f | e
+			a2:min g | f | e
+			a2:min g | f | e
+		}
+		text = \lyricmode 
+		{
+			Hit the road Jack and don't you come back 
+			no more, no more, no more, no more.
+			Hit the road Jack and don't you come back no more.
+		}
+		\score {
+			<<
+			\harmonies
+			\melody
+			%\new Lyrics \lyricsto "one" \text
+			>>
+		}
   \end{lilypond}
 
 
@@ -326,8 +374,8 @@
 		text = \lyricmode 
 		{
 			Ка -- лин -- ка, ка -- лин -- ка, ка -- лин -- ка  мо -- я!
-			В саду я -- го -- да ма -- лин -- ка, ма -- лин -- ка мо -- я!
-			Ах, ка-
+	        В саду я -- го -- да ма -- лин -- ка, ма -- лин -- ка мо -- я!
+	        Ах, ка-
 		}
 		\score{
 			<<
