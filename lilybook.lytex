@@ -24,7 +24,7 @@
 %-------------------------------------------------------------------------------
 \section*{Гаммы}
 
-\subsection*{Полная гамма До мажор}
+\subsection*{C}
 	\begin{lilypond}
 		gamma = \relative c { c d e f | g a b  }
 	
@@ -44,19 +44,39 @@
 
 
 
-\subsection*{Ломаная гамма До мажор}
-\begin{lilypond}
-	\score 
-	{
+\subsection*{Арпеджио}
+	\begin{lilypond}
+		\score 
+		{
+		    \relative c'
+			{
+				\key c \major \time 2/4 
+				c8 e g c | e, g c d | g, c d  e | c e g c | \break
+				c g e c | g' e c g | e' c g e | c' g e  c \fermata
+				\bar  "."
+		    } 
+		}
+	\end{lilypond}
+
+\subsection*{C}
+	\begin{lilypond}
+		
+	
+	\score {	
 	    \relative c'
 		{
-			\key c \major \time 2/4 
-			c8 e g c | e, g c d | g, c d  e | c e g c | \break
-			c g e c | g' e c g | e' c g e | c' g e  c \fermata
+			\key c \major \time 4/4 
+
+				 c16 d e f | g a b c | d e f g | a b c8 | 
+				 c16 b a g | f e d c | b a g f | e d c \fermata
+			
 			\bar  "."
 	    } 
-	}
-\end{lilypond}
+    }
+  
+  \end{lilypond}
+
+
 
 
 \subsection*{Гамма Си-бемоль мажор}
@@ -123,34 +143,7 @@
 	>>
   \end{lilypond}
 
-%-------------------------------------------------------------------------------
-\newpage
-
-\subsection*{C-Jam Blues}
-	\em{Twist}
-	\medskip
-
-	\begin{lilypond}
-		%\header {
-		%  title = "C-Jam Blues"
-		%  composer = "Duke Ellington"
-		%}
-		theme = \relative c'' { g8 g4 r8 r2 | g8 g4 r8 g8 g4 r8 | g4. c8 r2 | r1 }
-		<<
-		\chords { c1 c1 c1 c1 f1 f1 c1 c1 g1 g1 c1 c1 }
-		\relative 
-		{
-			\key c \major \time 4/4 
-			\theme \break
-			\theme \break
-			\theme \bar  "."
-		} 
-		>>
-  \end{lilypond}
-
-
-
-%-------------------------------------------------------------------------------
+% %-------------------------------------------------------------------------------
 \subsection*{Twist}
   \em{Twist}
   \medskip
@@ -176,80 +169,56 @@
 
 
 
-
 %-------------------------------------------------------------------------------
-%\subsection*{Rock-n-Roll}
-%  \em{Swing}
-%  \medskip
-%
-%	\begin{lilypond}
-%
-%		ch     = \chords      { c1 s c s | f   s c s  | g s c s }
-%		cega   = \relative c' { c4 e g a | bes a g e }
-%		facd   = \relative c' { f4 a c d | ees d c a }
-%		gbde   = \relative c' { g4 b d e | f   e d b }
-%		melody = \relative c'
-%		{
-%			\cega \cega \break
-%			\facd \cega \break
-%			\gbde \cega \bar  ":|." c2 \bar "."
-%		} 
-%		\score {
-%			\header {
-%				title       = \markup \center-column { "Rock-n-roll" }
-%				subsubtitle = "Ver.1"
-%				piece       = "Swing"
-%				opus        = "Вариант 2/4" 
-%			}
-%			\new Voice {
-%				\time 2/4 
-%				\shiftDurations #1 #0 { << \melody \ch >> }
-%			}
-%		}
-%
-%		%\em{Swing}
-%  		%\medskip
-%
-%		\score {
-%			\header {
-%				subsubtitle = "Ver.2"
-%				piece       = "Swing"
-%				opus        = "Вариант 4/4" 
-%			}
-%			\new Voice {
-%				\time 4/4
-%				\shiftDurations #0 #0 { << \ch \melody>> }
-%			}
-%		}
-%     
-%  \end{lilypond}
+\newpage
 
-%\subsection*{Rock-n-Roll две четверти}
-%  \em{Swing}
-%  \medskip
-%
-%	\begin{lilypond}
-%		cega   = \relative c' { c8 e g a | bes a g e }
-%		facd   = \relative c' { f8 a c d | ees d c a }
-%		gbde   = \relative c' { g8 b d e | f   e d b }
-%	
-%	<<
-%		\chords { c1 s c s | f   s c s  | g s c s }
-%
-%		\relative c''
-%		{
-%			\key c \major \time 2/4 
-%
-%			\cega \cega \break
-%			\facd \cega \break
-%			\gbde \cega \bar  ":|." c2 \bar "."
-%		} 
-%	>>
-%     
-%  \end{lilypond}
+\subsection*{C-Jam Blues}
+	\em{Ритм: swing}
+	\medskip
+
+	\begin{lilypond}
+		
+		theme = \relative c'' { g8 g4 r8 r2 | g8 g4 r8 g8 g4 r8 | g4. c8 r2 | r1 }
+		<<
+		\chords { c1 c1 c1 c1 f1 f1 c1 c1 g1 g1 c1 c1 }
+		\relative 
+		{
+			\key c \major \time 4/4 
+			\theme \break
+			\theme \break
+			\theme \bar  "."
+		} 
+		>>
+  \end{lilypond}
+
+
+\subsection*{Королевский парк}
+	\em{Ритм: swing}
+	\medskip
+
+	\begin{lilypond}
+		
+		<<
+		\chords { b1 b b b ees ees:min b g c  f b2 ees:min b4 ees:min b }
+		\relative c''
+		{
+			\key bes \major \time 4/4 
+			
+			bes4 r bes8[ c cis d] | bes8 bes4 bes8( bes4 ) r4 
+			bes4 r bes8[ c cis d] | bes8 bes4 bes8( bes4 ) r4 
+			bes4 r bes8[ c cis d] | bes8 bes4 bes8( bes4 ) r4 
+			bes4 r bes8[ c cis d] | g,8 g4 g8( g4 ) r4 
+			g4 r bes8[ c cis d] | f,8 f4 f8( f8 ) r8 r4 |
+			bes4 r bes r | bes bes bes r 
+
+			\bar  ":|."
+		} 
+		>>
+  \end{lilypond}
+
 
 \subsection*{Rock-n-Roll четветными}
-  \em{Swing}
+  \em{Ритм: swing}
   \medskip
 
 	\begin{lilypond}
@@ -274,7 +243,7 @@
 
 
 \subsection*{Rock-n-Roll восьмыми}
-  \em{Swing}
+  \em{Ритм: swing}
   \medskip
 
 	\begin{lilypond}
